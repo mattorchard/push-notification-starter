@@ -31,6 +31,13 @@ export const enableTokenSyncing = userId => {
   );
 };
 
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    enableTokenSyncing(user.uid);
+  }
+});
+
+
 export const onMessage = messaging.onMessage;
 
 export default firebase;
