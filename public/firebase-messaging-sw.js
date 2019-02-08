@@ -1,5 +1,4 @@
-importScripts("https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/3.4.0/firebase-messaging.js");
+importScripts("https://www.gstatic.com/firebasejs/5.8.2/firebase.js");
 const config = {
   apiKey: "AIzaSyC26SGXhWfq7xG0stEDiShb5uttLExx6h8",
   authDomain: "matts-push-starter.firebaseapp.com",

@@ -16,7 +16,7 @@ const updateRemoteToken = async (userId) => {
   const token = await messaging.getToken();
   console.log("New Token", token);
   return firebase.firestore()
-  .collection("/user")
+  .collection("/users")
   .doc(userId)
   .set({token});
 };
