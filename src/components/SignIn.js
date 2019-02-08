@@ -1,16 +1,23 @@
 import React from "react";
 import {signIn} from "../services/account-service";
-export default class SignIn extends React.Component {
+import firebase from "../services/firebase";
 
-  signInWithGoogle = async () => {
-    return signIn();
+export default class SignIn extends React.Component {
+  state = {
+    signedIn: true
   };
 
-  render() {
-    return <div>
-      <button type="button" onClick={this.signInWithGoogle}>
+  constructor(props) {
+    super(props);
+    firebase.auth().onAuthStateChanged(user =>
+      this.setState({signedIn: Boolean(user)}));
+  }
+
+
+  render () {
+    return  this.state.signedIn ? "" :
+      <button type="button" onClick={() => signIn()}>
         Sign in with Google
       </button>
-    </div>
   }
-}
+};
