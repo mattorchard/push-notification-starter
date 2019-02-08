@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import SignIn from "./components/SignIn";
 
 class App extends Component {
   render() {
-    return <header>
-      Howdy
-    </header>
+    return <>
+      <header className="banner">
+        <h1 className="site-header">Howdy</h1>
+      </header>
+      <main className="main-content">
+        <SignIn/>
+      </main>
+    </>
   }
 }
 

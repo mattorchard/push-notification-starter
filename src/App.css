@@ -1,0 +1,14 @@
+.banner {
+    background: darkslateblue;
+    color: white;
+}
+.site-header {
+    margin: 0;
+    padding: 1em 2em;
+}
+.main-content {
+    margin: 0 auto;
+    max-width: 800px;
+    background: white;
+    height: 100%;
+}
