@@ -12,7 +12,8 @@ firebase.initializeApp(config);
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey("BPPfLC_iRrFQQ789b_SYtbRPMfUkWYibidVFXi0BfMUHgK8HrqgBjArovgTIQzh7G9EM-xNzG7yQXHG8ekeigSA");
 
-const updateRemoteToken = async (userId) => {
+
+const updateNotificationToken = async (userId) => {
   const token = await messaging.getToken();
   console.log("New Token", token);
   return firebase.firestore()
@@ -21,23 +22,30 @@ const updateRemoteToken = async (userId) => {
   .set({token});
 };
 
-export const enableTokenSyncing = userId => {
+export const enableNotificationTokenSyncing = userId => {
   messaging.requestPermission()
   .then(() => {
-    updateRemoteToken(userId);
-    messaging.onTokenRefresh(() => updateRemoteToken(userId));
+    // Sync Initial token
+    updateNotificationToken(userId);
+    // Sync again whenever modified
+    messaging.onTokenRefresh(() => updateNotificationToken(userId));
   }).catch(error =>
     console.error("Error while getting permission to show notifications", error)
   );
 };
 
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    enableTokenSyncing(user.uid);
-  }
+navigator.serviceWorker.register('sw.js')
+.then(registration => {
+  messaging.useServiceWorker(registration);
+  // Once service worker is registered listen to auth changes
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      enableNotificationTokenSyncing(user.uid);
+    }
+  });
+
+
 });
 
-
-export const onMessage = messaging.onMessage;
 
 export default firebase;
