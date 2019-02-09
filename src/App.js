@@ -12,6 +12,8 @@ class App extends Component {
       </header>
       <main className="main-content">
         <SignIn/>
+        <AddToHomeScreen/>
+        <Messages/>
       </main>
     </>
   }

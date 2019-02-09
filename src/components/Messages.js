@@ -1,18 +1,21 @@
 import React from "react";
-import {onMessage} from "../services/firebase";
-
+import firebase from "../services/firebase";
 
 export default class Messages extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      messages: []
+      messages: [{title: "Sample", body: "Sample message"}]
     };
-    onMessage(payload => this.setState(state => {
-      state.messages.push(payload);
-      return state;
-    }));
+    firebase.messaging().onMessage(payload => this.addMessage(payload.notification));
   }
+
+  addMessage = message => this.setState(state => ({
+    messages: [
+      message,
+      ...state.messages
+    ]
+  }));
 
   render() {
     return <ol>

@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dfad331-713f-49ac-919e-20155c6fc456" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/icon-large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icon-small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddToHomeScreen.js" afterDir="false" />
+    <list default="true" id="8dfad331-713f-49ac-919e-20155c6fc456" name="Default" comment="Adds add to home screen management component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebase-messaging-sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/firebase-messaging-sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/firebase.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +42,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+            <state relative-caret-position="225">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -874,7 +864,7 @@
       <workItem from="1549552609146" duration="2741000" />
       <workItem from="1549561971567" duration="99000" />
       <workItem from="1549640506289" duration="1205000" />
-      <workItem from="1549641718151" duration="29004000" />
+      <workItem from="1549641718151" duration="29267000" />
     </task>
     <task id="LOCAL-00001" summary="Removes generated content and basic service worker">
       <created>1549641787450</created>
@@ -911,18 +901,46 @@
       <option name="project" value="LOCAL" />
       <updated>1549663632519</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adds formatting to notification structure">
+      <created>1549746079910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549746079910</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adds new custom service worker with default fetch handler for A2HS">
+      <created>1549746130668</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549746130668</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adds add to home screen management component">
+      <created>1549746184489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549746184489</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adds new icons and updates manifest to point to them">
+      <created>1549746264624</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549746264624</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29022000" />
+    <option name="totallyTimeSpent" value="29285000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="48" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19453125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1296875" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -954,7 +972,11 @@
     <MESSAGE value="Adds cloud function for sending notifications" />
     <MESSAGE value="Hides sign in option for users who are already logged in" />
     <MESSAGE value="Automates token syncing to occur on login or sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automates token syncing to occur on login or sign up" />
+    <MESSAGE value="Adds formatting to notification structure" />
+    <MESSAGE value="Adds new custom service worker with default fetch handler for A2HS" />
+    <MESSAGE value="Adds add to home screen management component" />
+    <MESSAGE value="Adds new icons and updates manifest to point to them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds new icons and updates manifest to point to them" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
@@ -1275,8 +1297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="225">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
