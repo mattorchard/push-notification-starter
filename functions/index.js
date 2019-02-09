@@ -10,19 +10,31 @@ exports.sendNotification = functions.firestore
 .onUpdate(change => {
 
   const object = change.after.data();
-  console.log("Got a new object", object);
   const {userId, title, body} = object;
 
   return admin.firestore()
   .collection("users")
   .doc(userId)
-  .get().then(userSnap => {
+  .get()
+  .then(userSnap => {
     const userData = userSnap.data();
-    console.log("Got user", userData);
+    if (!userData) {
+      throw new Error(`No user found for uid ${userId}`);
+    }
+
     const token = userData.token;
+
     return {
       token,
-      notification: {title, body}
+      notification: {
+        title,
+        body
+      },
+      webpush: {
+        fcm_options: {
+          link: "https://matts-push-starter.firebaseapp.com"
+        }
+      }
     };
   }).then(message =>
     admin.messaging().send(message)
